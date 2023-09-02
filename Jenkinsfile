@@ -18,7 +18,7 @@ pipeline {
     stage('deploy') {
 	   when { expression { env.GIT_BRANCH == 'origin/main' }}
 	   steps {
-		echo "deploying"
+		echo "step not executed"
 }
 }
 }}
