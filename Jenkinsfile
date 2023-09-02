@@ -16,7 +16,11 @@ pipeline {
 			sh 'node ./frontend/test.js'}
 } }}
     stage('deploy') {
-	   when { expression { env.GIT_BRANCH == 'origin/main' }}
+	   when { expression { env.GIT_BRANCH == 'origin/main' }
+	   beforeInput true }
+	   input {
+		message 'Deploy the application'	
+}
 	   steps {
 		echo "deploying"
 }
